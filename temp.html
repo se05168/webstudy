@@ -2,17 +2,37 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>temp page</title>
+    <title></title>
   </head>
   <body>
-    <h1>how can we start html coding?</h1>
-    we can't use korean because of encoding problem, so we first use english in this part
-    <strong>can we?</strong>
-    <p><a href="https://youtu.be/iFoqGyWhMws" target="_blank" title="god mv">엔시티 일-이칠의 하투헤를 맛봐라</a>
-    </p>
-     <p>이번엔 한글을 할 수 있어요</p>
-     <p>what happen if i use paragraph tag? <br> and this?</p>
-    <img src="https://img.insight.co.kr/static/2019/12/12/700/ai64jq6h18ri7foqivh5.jpg" alt="엘사여요" width="50%">
-    <img src="sky.jpg" alt="로컬이미지여요" width="50%">
+    <input type="button" value="peek-a-boo!" onclick="
+    if(this.value == 'peek-a-boo!'){
+      document.querySelector('body').style.backgroundColor = 'pink';
+      this.value = 'back';
+    }
+    else{
+      document.querySelector('body').style.backgroundColor = 'white';
+      this.value = 'peek-a-boo!';
+  }
+    ">
+    <input type="button" value="peek-a-boo!" onclick="
+    /* if(document.querySelector('input').value == 'peek-a-boo!'){
+      document.querySelector('body').style.backgroundColor = 'pink';
+      document.querySelector('input').value = 'back';
+    }
+    else{
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('input').value = 'peek-a-boo!';
+    } */
+    //위의 document.querySelector('input')은 input 태그 안에서 input 태그를 가리키고 있음. 즉 자기 자신을 가리킴. 이를 this로 대체 가능
+    if(this.value == 'peek-a-boo!'){
+      document.querySelector('body').style.backgroundColor = 'pink';
+      this.value = 'back';
+    }
+    else{
+      document.querySelector('body').style.backgroundColor = 'white';
+      this.value = 'peek-a-boo!';
+    }
+    ">
   </body>
 </html>

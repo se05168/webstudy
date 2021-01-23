@@ -17,6 +17,21 @@
         <p>
           케이팝 처돌이가 꼽은 meaningful K-POP
         </p>
+        <p><br><br>퍼캘 전용 비밀글 페이지를 만들었어요 <br> 밑에 암호를 입력해주세요</p>
+        <input type="text" id="secret">
+        <input type="button" id="secretbutton" value="입력" onclick='comparekey()'>
+        <script>
+          function comparekey(){
+            var input = document.getElementById("secret").value;
+            console.log("value : "+input);
+            if(input == 990202){
+              location.href='firstcalendar.html';
+            }
+            else{
+              alert("Try Again - 디어&재현 들어보세요");
+            }
+          }
+        </script>
       </div>
     </div>
   </body>
