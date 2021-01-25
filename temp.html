@@ -2,37 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>실험실</title>
+    <script>
+      function write(content){
+        document.write(content+'<br>'); //document.write는 html문서에 그 문자열을 쓰는것
+      }
+      function sum1(left,right){
+        return left+right+'<br>';
+      }
+      function sum2(left,right){
+        document.write('<a>'+left+right+'<br></a>');
+      }
+      var book = {
+        "writer":"me",
+        "title":"hello, world!",
+        "rap name":"DJ burger"
+      };
+      //document.write(book.title);
+      //document.write(book["rap name"]); //띄쓰포함 속성은 이렇게 불러야함
+      book.number='1';
+      book["you can"]="do it";
+      //document.write(book.number);
+      //document.write(book["you can"]);
+      book.showAll = function(){ //생성자는 선언할때 파라미터 쓰지 않음
+        for (var key in this){
+          document.write(key+" : "+this[key]+'<br>'); //key의 정의
+        }
+      }//지금 위의 코드가 걍 function어쩌구를 showAll 속성으로 박았다는 얘기임? - 맞음 미쳤낰ㅋㅋ
+    </script>
+    <script src='colorButton.js'> //이 안에는 colorButton.js와 관련된 코드만 쓸 수 있음. 따라서 src로 파일 박으려면 걍 옆에 한 줄만 쓰는게... 나은듯?!
+    </script>
   </head>
   <body>
-    <input type="button" value="peek-a-boo!" onclick="
-    if(this.value == 'peek-a-boo!'){
-      document.querySelector('body').style.backgroundColor = 'pink';
-      this.value = 'back';
-    }
-    else{
-      document.querySelector('body').style.backgroundColor = 'white';
-      this.value = 'peek-a-boo!';
-  }
-    ">
-    <input type="button" value="peek-a-boo!" onclick="
-    /* if(document.querySelector('input').value == 'peek-a-boo!'){
-      document.querySelector('body').style.backgroundColor = 'pink';
-      document.querySelector('input').value = 'back';
-    }
-    else{
-      document.querySelector('body').style.backgroundColor = 'white';
-      document.querySelector('input').value = 'peek-a-boo!';
-    } */
-    //위의 document.querySelector('input')은 input 태그 안에서 input 태그를 가리키고 있음. 즉 자기 자신을 가리킴. 이를 this로 대체 가능
-    if(this.value == 'peek-a-boo!'){
-      document.querySelector('body').style.backgroundColor = 'pink';
-      this.value = 'back';
-    }
-    else{
-      document.querySelector('body').style.backgroundColor = 'white';
-      this.value = 'peek-a-boo!';
-    }
-    ">
+
+    <input type="button" value="peek-a-boo!" onclick="colorChangeButton(this);">
+
+    <script> //body용 스크립트
+      /*
+      write('헬로월드');
+      document.write(sum1(2,3)); //5; right까지 +가 더하기, 뒤에는 숫자+문자열
+      sum2(2,3); //23; '<a>'+부터 +가 스트링 붙임 뒤까지 영향*/
+    </script>
+
+    <p>이건 테스트용 텍스트입니다(라임ㅋ)</p>
   </body>
 </html>
